@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>TaskEase — Simple Task Management App</title>
+    <!-- Style Sheet Link -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>TaskEase</h1>
+    </header>
+
+    <main class="container">
+      <!-- Add New Task Form -->
+      <section>
+        <div class="card">
+          <h2>Add New Task</h2>
+          <form id="newTaskForm">
+            <label for="newTaskTitle">Title <span class="req">*</span></label>
+            <input
+              id="newTaskTitle"
+              type="text"
+              placeholder="Enter your task title..."
+              required
+            />
+            <label for="newTaskDescription">Description</label>
+            <textarea
+              id="newTaskDescription"
+              rows="4"
+              placeholder="Add optional description..."
+            ></textarea>
+            <button type="submit" class="btn btn-primary">+ Add Task</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Task List -->
+      <section>
+        <div class="card">
+          <div class="task-list-heading">
+            <h2>Your Tasks</h2>
+            <div class="individual-task">
+              <select id="sortSelect">
+                <option value="newest">Newest First</option>
+                <option value="oldest">Oldest First</option>
+                <option value="alphabetical">A–Z</option>
+              </select>
+              <button
+                id="deleteAllBtn"
+                class="delete-btn-outline"
+                style="display: flex; align-items: center; gap: 5px"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-eraser-icon lucide-eraser"
+                >
+                  <path
+                    d="M21 21H8a2 2 0 0 1-1.42-.587l-3.994-3.999a2 2 0 0 1 0-2.828l10-10a2 2 0 0 1 2.829 0l5.999 6a2 2 0 0 1 0 2.828L12.834 21"
+                  />
+                  <path d="m5.082 11.09 8.828 8.828" />
+                </svg>
+                Delete All
+              </button>
+            </div>
+          </div>
+          <div id="taskList" class="task-list"></div>
+          <div class="empty-state">No tasks yet.</div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Feedback Banner -->
+    <div id="feedback" class="feedback"></div>
+
+    <!-- Deletion Confirmation Modal with Cancel/Delete Buttons -->
+    <div id="confirmModal" class="modal">
+      <div class="modal-content">
+        <h3 id="confirmTitle">Confirm Action</h3>
+        <p id="confirmMessage">Are you sure?</p>
+        <div class="modal-actions">
+          <button id="confirmCancelBtn" class="btn btn-secondary">
+            Cancel
+          </button>
+          <button id="confirmConfirmBtn" class="btn btn-danger">Delete</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Script File -->
+    <script src="script.js"></script>
+  </body>
+</html>
