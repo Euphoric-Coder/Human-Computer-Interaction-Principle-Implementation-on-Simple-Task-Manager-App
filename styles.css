@@ -1,3 +1,4 @@
+/* Using :root to define CSS variables for consistent theming */
 :root {
   --bg: #0f1220;
   --panel: #181c30;
@@ -83,7 +84,7 @@ label {
   font-size: 14px;
 }
 
-/* ====== FORM STYLING ====== */
+/* Form Styling */
 .task-form {
   display: flex;
   flex-direction: column;
@@ -152,10 +153,11 @@ textarea {
   color: var(--error);
   background: transparent;
   padding: 10px 16px;
-  white-space: nowrap;   /* prevents text from breaking */
+  /* avoids text from breaking */
+  white-space: nowrap;   
   font-size: 14px;
   border-radius: var(--radius);
-  height: 40px;          /* consistent height with dropdown */
+  height: 40px; 
   line-height: 18px;
   cursor: pointer;
   display: flex;
